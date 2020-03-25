@@ -16,9 +16,10 @@ $link = trim(strip_tags($_GET['u']));
 if (empty($link)) {
   return false;
 }
-var_dump($link);
-die();
+
 $im = imagecreatefromwebp($link);
+var_dump($im);
+die();
 if($im) {
 	$file_name = basename($link);
 	$result = imagejpeg($im, trim(trim($file_name, '.webp')).'.jpg', 80);
