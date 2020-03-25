@@ -8,14 +8,21 @@ if(count($filenames) > 10) {
 	  unlink($filenames[$i]);
   }
 }
+if(empty($_GET['u'])){
+	echo "Mời nhập link: example.com/index.php?u=img.com/adfg.webp";
+	die();
+}
 $link = trim(strip_tags($_GET['u']));
 if (empty($link)) {
   return false;
 }
 $im = imagecreatefromwebp($link);
-$file_name = basename($link);
-$a = imagejpeg($im, 'trim(trim($file_name, '.webp')).'.jpg', 80);
-echo !empty($a) ? true : false;
+if($im) {
+	$file_name = basename($link);
+	$result = imagejpeg($im, 'trim(trim($file_name, '.webp')).'.jpg', 80);
+}
+
+echo !empty($result) ? 1 : 0;
 die();
 
 
