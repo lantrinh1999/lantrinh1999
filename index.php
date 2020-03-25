@@ -1,4 +1,4 @@
 <?php
-$filenames = glob('**/*.jpg');
+$filenames = glob('*.jpg');
 var_dump($filenames);
 ?>
