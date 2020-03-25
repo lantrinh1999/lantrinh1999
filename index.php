@@ -1,4 +1,4 @@
 <?php
-$filenames = glob('**/*.webp');
+$filenames = glob('**/*.jpg');
 var_dump($filenames);
 ?>
