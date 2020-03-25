@@ -1,4 +1,4 @@
-<?php
+<?php 
 require './LHelper.php';
 $helper = new LHelper;
 
@@ -19,13 +19,9 @@ if (empty($link)) {
 $im = imagecreatefromwebp($link);
 if($im) {
 	$file_name = basename($link);
-	$result = imagejpeg($im, 'trim(trim($file_name, '.webp')).'.jpg', 80);
+	$result = imagejpeg($im, trim(trim($file_name, '.webp')).'.jpg', 80);
 }
 
 echo !empty($result) ? 1 : 0;
 die();
-
-
-
-
-?>
+ ?>
